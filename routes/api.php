@@ -19,3 +19,28 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('users', 'Api\UserController');
 Route::resource('events', 'Api\EventController');
+
+Route::get('events', function () {
+    return response(['event 1', 'event 2', 'event 3'],200);
+});
+ 
+Route::get('events/{event}', function ($eventId) {
+    return response()->json(['eventId' => "{$eventId}"], 200);
+});
+  
+ 
+Route::post('events', function() {
+    return  response()->json([
+            'message' => 'Create success'
+        ], 201);
+});
+ 
+Route::put('events/{event}', function() {
+    return  response()->json([
+            'message' => 'Update success'
+        ], 200);
+});
+ 
+Route::delete('events/{event}',function() {
+    return  response()->json(null, 204);
+});
