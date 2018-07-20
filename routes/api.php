@@ -17,30 +17,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('users', 'Api\UserController');
-Route::resource('events', 'Api\EventController');
-
-Route::get('events', function () {
-    return response(['event 1', 'event 2', 'event 3'],200);
-});
+Route::get('users', 'Api\UserController@index');
+Route::get('events', 'Api\EventController@index');
  
-Route::get('events/{event}', function ($eventId) {
-    return response()->json(['eventId' => "{$eventId}"], 200);
-});
-  
+Route::get('event/{product}', 'Api\EventController@show');
  
-Route::post('events', function() {
-    return  response()->json([
-            'message' => 'Create success'
-        ], 201);
-});
+Route::post('event','Api\EventController@store');
  
-Route::put('events/{event}', function() {
-    return  response()->json([
-            'message' => 'Update success'
-        ], 200);
-});
+Route::put('event/{product}','Api\EventController@update');
  
-Route::delete('events/{event}',function() {
-    return  response()->json(null, 204);
-});
+Route::delete('event/{product}', 'Api\EventController@destroy');

@@ -38,7 +38,9 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = Events::create($request->all());
+ 
+        return response()->json($event, 201);
     }
 
     /**
@@ -47,9 +49,9 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Event $event)
     {
-        //
+        return $event;
     }
 
     /**
@@ -70,9 +72,11 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event)
     {
-        //
+        $event->update($request->all());
+ 
+        return response()->json($event, 200);
     }
 
     /**
@@ -81,8 +85,10 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Event $event)
     {
-        //
+        $event->destroy();
+ 
+        return response()->json(null, 204);
     }
 }
