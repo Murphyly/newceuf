@@ -80,9 +80,9 @@
             <div class="content">
                 <div class="title m-b-md">
                     CEUF
+                    <hr>
                 </div>
 
-                <hr>
             </div>
         </div>
     </body>
