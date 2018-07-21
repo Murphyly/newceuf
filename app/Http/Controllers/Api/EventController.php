@@ -38,6 +38,17 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'slogam' => 'string',
+            'general_theme' => 'string',
+            'description' => 'required|unique:products|max:255',
+            'period' => 'dateTime',
+            'place' => 'string',
+            'organiser' => 'string',
+            'image' => 'string',
+        ]);
+
         $event = Events::create($request->all());
  
         return response()->json($event, 201);
