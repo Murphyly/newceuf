@@ -22,7 +22,7 @@ Route::get('events', 'Api\EventController@index');
  
 Route::get('event/{product}', 'Api\EventController@show');
  
-Route::post('event','Api\EventController@store');
+/*Route::post('event','Api\EventController@store');*/
  
 Route::put('event/{product}','Api\EventController@update');
  
