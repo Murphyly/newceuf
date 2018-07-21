@@ -17,5 +17,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('users', 'Api\UserController');
-Route::resource('events', 'Api\EventController');
+Route::get('users', 'Api\UserController@index');
+Route::get('events', 'Api\EventController@index');
+ 
+Route::get('event/{product}', 'Api\EventController@show');
+ 
+Route::post('event','Api\EventController@store');
+ 
+Route::put('event/{product}','Api\EventController@update');
+ 
+Route::delete('event/{product}', 'Api\EventController@destroy');
