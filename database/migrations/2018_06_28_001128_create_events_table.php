@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('slogam');
             $table->string('general_theme');
             $table->string('description', '255');
-            $table->dateTime('period');
+            $table->string('period');
             $table->string('place');
             $table->string('organiser');
             $table->string('image');

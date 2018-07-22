@@ -41,7 +41,7 @@ return [
             'prefix' => '',
         ],
 
-         'mysql' => [
+         /*'mysql' => [
 
             'driver' => 'mysql',
             'host' => $DATABASE_URL["host"],
@@ -55,9 +55,9 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
-        ],
+        ],*/
 
-        /*'mysql' => [
+        'mysql' => [
 
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -71,7 +71,7 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
-        ],*/
+        ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',

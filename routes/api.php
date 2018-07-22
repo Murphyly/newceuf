@@ -21,8 +21,11 @@ Route::get('users', 'Api\UserController@index');
 Route::get('events', 'Api\EventController@index');
  
 Route::get('event/{event}', 'Api\EventController@show');
- 
-Route::post('event','Api\EventController@store');
+
+/*$oi = ["title"=>"teste","slogam"=>"oi","general_theme"=>"oi","description"=>"oi","period"=>"0000-00-00 00:00:00","place"=>"oi","organiser"=>"oi","image"=>"oi",];
+var_dump($oi);*/
+Route::post('event','Api\EventController@store')->name('new_event');
+
  
 Route::put('event/{event}','Api\EventController@update');
  
