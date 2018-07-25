@@ -1,0 +1,49 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js install
+
+PATH: 
+  /home/isys/bin:/home/isys/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/isys/.rvm/bin:/home/isys/.rvm/bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  10.6.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/var/www/html/CEUF/node_modules/abbrev'
+
+npm manifest: 
+  {
+      "private": true,
+      "scripts": {
+      "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+      "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+      "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+      "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+      "devDependencies": {
+          "axios": "^0.17",
+          "babel-preset-react": "^6.23.0",
+          "bootstrap-sass": "^3.3.7",
+          "cross-env": "^5.1",
+          "jquery": "^3.2",
+          "laravel-mix": "^2.1.11",
+          "lodash": "^4.17.4",
+          "react": "^15.4.2",
+          "react-dom": "^15.4.2"
+      },
+      "dependencies": {
+          "browserslist": "^4.0.1",
+          "i": "^0.3.6"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
