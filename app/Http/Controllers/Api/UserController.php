@@ -98,17 +98,17 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response 
      */ 
     
-    public function register(Request $request){
+    /*public function register(Request $request){
         $request->validate([
-            'email'=>'required',
-            'name'=>'required',
-            'password'=>'required'
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
         ]);
-        $user=new User();
-        $user->email=$request->email;
-        $user->name=$request->name;
-        $user->email=$request->email;
-        $user->password=bcrypt($request->password);
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
         $user->save();
         $http = new Client;
         $response = $http->post(url('oauth/token'), [
@@ -164,6 +164,6 @@ class UserController extends Controller
             ],
         ]);
         return json_decode((string) $response->getBody(), true);
-    }
+    }*/
 
 }

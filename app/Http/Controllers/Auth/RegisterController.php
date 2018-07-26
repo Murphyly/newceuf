@@ -67,5 +67,18 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        $http = new Client;
+        $response = $http->post(url('oauth/token'), [
+            'form_params' => [
+                'grant_type' => 'password',
+                'client_id' => '22',
+                'client_secret' => 'RsXqGmxTziwMeanZ3VLn0xXUVgfRLDUuv2lVkDpS',
+                'username' => $request->email,
+                'password' => $request->password,
+                'scope' => '',
+            ],
+        ]);
+        return response(['auth'=>json_decode((string) $response->getBody(), true)]);
     }
 }
