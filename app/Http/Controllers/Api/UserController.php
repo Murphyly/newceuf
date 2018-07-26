@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth; 
+use GuzzleHttp\Client;
+use Validator;
 
 class UserController extends Controller
 {
@@ -38,7 +41,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $user = User::create($request->all());
+ 
+        return response()->json($user, 201);
     }
 
     /**
@@ -85,4 +91,79 @@ class UserController extends Controller
     {
         //
     }
+
+    /** 
+     * login api 
+     * 
+     * @return \Illuminate\Http\Response 
+     */ 
+    
+    public function register(Request $request){
+        $request->validate([
+            'email'=>'required',
+            'name'=>'required',
+            'password'=>'required'
+        ]);
+        $user=new User();
+        $user->email=$request->email;
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=bcrypt($request->password);
+        $user->save();
+        $http = new Client;
+        $response = $http->post(url('oauth/token'), [
+            'form_params' => [
+                'grant_type' => 'password',
+                'client_id' => '22',
+                'client_secret' => 'RsXqGmxTziwMeanZ3VLn0xXUVgfRLDUuv2lVkDpS',
+                'username' => $request->email,
+                'password' => $request->password,
+                'scope' => '',
+            ],
+        ]);
+        return response(['auth'=>json_decode((string) $response->getBody(), true),'user'=>$user]);
+        
+    }
+    public function login(Request $request){
+        
+        $request->validate([
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+        $user= User::where('email',$request->email)->first();
+        if(!$user){
+            return response(['status'=>'error','message'=>'User not found']);
+        }
+        if(Hash::check($request->password, $user->password)){
+                $http = new Client;
+            $response = $http->post(url('oauth/token'), [
+                'form_params' => [
+                    'grant_type' => 'password',
+                    'client_id' => '22',
+                    'client_secret' => 'RsXqGmxTziwMeanZ3VLn0xXUVgfRLDUuv2lVkDpS',
+                    'username' => $request->email,
+                    'password' => $request->password,
+                    'scope' => '',
+                ],
+            ]);
+            return response(['auth' => json_decode((string)$response->getBody(), true), 'user' => $user]);
+        
+        }else{
+            return response(['message'=>'password not match','status'=>'error']);
+        }
+    }
+    public function refreshToken() {
+        $http = new Client;
+        $response = $http->post(url('oauth/token'), [
+            'form_params' => [
+                'grant_type' => 'refresh_token',
+                'refresh_token' => request('refresh_token'),
+                'client_id' => '22',
+                'client_secret' => 'RsXqGmxTziwMeanZ3VLn0xXUVgfRLDUuv2lVkDpS',
+                'scope' => '',
+            ],
+        ]);
+        return json_decode((string) $response->getBody(), true);
+    }
+
 }

@@ -8,7 +8,7 @@
 
     <div style="margin-top: 30px; padding-bottom: 140px !important;" class="body-cadastro">
         <div id="main" class="container">
-            <form action="{{ route('event.store') }}" method="POST" data-toggle="validator">
+            <form action="{{ route('event.update', $event) }}" method="PUT" data-toggle="validator">
             {{ csrf_field() }}
 
                 <div class="row">
