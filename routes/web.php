@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('teste', function () {
-    return view('teste');
+Route::get('event/create', function () {
+    return view('events.new');
 });
 
 

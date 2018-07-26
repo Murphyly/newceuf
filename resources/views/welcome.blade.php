@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #000000;
+                background: #000; 
                 color: #fff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -72,13 +72,14 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}">Cadastrar</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
+                <img src="{{ asset('images/logow.png') }}">
                     CEUF
                     <hr>
                 </div>
