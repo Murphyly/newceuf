@@ -15,9 +15,15 @@ class EventController extends Controller
      */
     public function index()
     {
+        $event = Events::all();
+
+        return view('event.index', ['events' => $event]);
+
+        /*
         $events = Events::all();
 
         return response()->json($events);
+        */
     }
 
     /**
@@ -53,7 +59,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        return $event;
+        return view('event.show')->with('event', $event);
     }
 
     /**

@@ -16,11 +16,20 @@ Route::get('/', function () {
 });
 
 Route::get('event/create', function () {
-    return view('events.new');
+    return view('event.new');
 });
+
+/*Route::resource('event/index', function () {
+    return view('event.index');
+});*/
+
+Route::resource('event', 'Api\EventController')->only([
+    'index', 'show'
+]);
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('event/search/', 'Api\EventController@search')->name('search');
