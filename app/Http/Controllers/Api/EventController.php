@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Events;
+use App\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +15,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $event = Events::all();
+        $event = Event::all();
 
         return view('event.index', ['events' => $event]);
 
@@ -45,8 +45,8 @@ class EventController extends Controller
     public function store(Request $request)
     {
 
-        $event = Events::create($request->all());
-        return view('home');
+        $event = Event::create($request->all());
+        return view('event.show')->with('event', $event);
  
         /*return response()->json($event, 201);*/
     }

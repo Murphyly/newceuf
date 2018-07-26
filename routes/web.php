@@ -17,19 +17,17 @@ Route::get('/', function () {
 
 Route::get('event/create', function () {
     return view('event.new');
-});
+})->name('eventcreate');
 
-/*Route::resource('event/index', function () {
-    return view('event.index');
-});*/
 
-Route::resource('event', 'Api\EventController')->only([
-    'index', 'show'
-]);
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('event/index', 'Api\EventController@index');
+
+Route::get('event/show/{event}', 'Api\EventController@show')->name('event/show');
 
 Route::post('event/search/', 'Api\EventController@search')->name('search');
