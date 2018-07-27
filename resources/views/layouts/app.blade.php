@@ -34,6 +34,11 @@
 
                 </div>
 
+                <form class="form-inline mr-auto" action="{{ route('search') }}" method="POST">
+                    {{ csrf_field() }}
+                    <input class="form-control opaque-navbar" value="{{ old('content') }}" name="content" type="search" placeholder="Pesquisar" aria-label="Search" >
+                    <button class="btn btn-outline-info" type="submit">Ir</button>
+                </form>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">

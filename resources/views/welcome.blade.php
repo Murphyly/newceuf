@@ -17,7 +17,7 @@
                 color: #fff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
-                height: 100vh;
+                height: 100px;
                 margin: 0;
             }
 
@@ -86,5 +86,6 @@
 
             </div>
         </div>
+
     </body>
 </html>

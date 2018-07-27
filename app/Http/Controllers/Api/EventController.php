@@ -99,4 +99,12 @@ class EventController extends Controller
  
         return response()->json(null, 204);
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->content;
+
+        $events = Event::where('title','LIKE',"%{$search}%")->orWhere('general_theme','LIKE',"%{$search}%")->orWhere('period','LIKE',"%{$search}%")->orWhere('place','LIKE',"%{$search}%")->get();
+        return view('event.search')->with('events', $events)->with('search', $search);
+    }
 }
