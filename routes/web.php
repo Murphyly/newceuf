@@ -15,8 +15,10 @@ Route::get('event/create', function () {
     return view('event.new');
 })->name('eventcreate');
 
+Route::get('/', function () {
+    return view('start.start');
+});
 
-Route::get('/', 'PageController@index');
 
 Auth::routes();
 

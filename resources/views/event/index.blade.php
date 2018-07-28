@@ -12,7 +12,7 @@
             <div class="card mb-5">
 			    <div class="row py-5">
 			        <div class="col-md-4">
-			            <img style="width: 100%; height: 100%; padding: 5%" class="card-img-top" src="{{ $event->image }}" alt="Card image cap">
+			            <img class="card-img-top p-3" src="{{ $event->image }}" alt="Card image cap">
 			        </div>
 			        <div class="col-md-8">
 			            <div class="card-body">
@@ -34,8 +34,7 @@
 			            </div>
 			        </div>
 			    </div>
-			</div><hr style="border: 1px solid #556270">
-
+			</div>
         @endforeach
     </div>
 

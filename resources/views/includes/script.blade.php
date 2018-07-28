@@ -3,5 +3,3 @@
 <script language="JavaScript" type="text/javascript" src="{{ asset('js/bootstrap.js')}}"></script>
 <script language="JavaScript" type="text/javascript" src="{{ asset('vendor/jQuery-Mask-Plugin-master/dist/jquery.mask.js') }}"></script>
 <script language="JavaScript" type="text/javascript" src="{{ asset('vendor/laravel-filemanager/js/lfm.js') }}"></script>
-<script language="JavaScript" type="text/javascript" src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
-<script language="JavaScript" type="text/javascript" src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
