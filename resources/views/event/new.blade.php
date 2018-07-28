@@ -9,7 +9,6 @@
     <div style="margin-top: 30px; padding-bottom: 140px !important;" class="body-cadastro">
         <div id="main" class="container">
             <form action="{{ route('event.store') }}" method="POST" data-toggle="validator">
-            {{ csrf_field() }}
 
                 <div class="row">
                   <div class="col-md-12">
@@ -101,10 +100,15 @@
                        <input name="organiser" type="text" class="form-control" placeholder="Digite o nome do Organizador">
                     </div>
 
-                     <div class="form-group col-md-6">
-                       <label for="campo2">Banner de divulgação</label>
-                       <input name="image" type="text" class="form-control" placeholder="Confirme seu text">
-                    </div>
+                     <div class="form-group col-md-12">
+                        <label for="">Imagem</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button data-input="thumbnail2" data-preview="holder" class="btn btn-outline-secondary lfm" type="button"><i class="fa fa-image"></i></button>
+                            </div>
+                            <input id="thumbnail2" name="image" type="text" class="form-control" aria-label="" aria-describedby="basic-addon1" readonly>
+                        </div>
+                     </div>
                 </div>
 
                 <div class="row">

@@ -7,8 +7,12 @@
 @section('content')
 
 
+    @if ( \Session::has('notification') )
+        @include('includes.notification')
+    @endif
+
+
     <div class="container py-5">
-        @foreach($events as $event )
             <div class="card mb-5">
 			    <div class="row py-5">
 			        <div class="col-md-4">
@@ -16,7 +20,7 @@
 			        </div>
 			        <div class="col-md-8">
 			            <div class="card-body">
-			                <h3><b>Evento:</b></h3>
+			            	<h3><b>Evento:</b></h3>
 			                <h4 class="card-title">{{ $event->title}}</h4>
 			                <h3><b>Área de conhecimento:</b></h3>
 			                <p class="card-text">{{ $event->general_theme }}</p>
@@ -30,12 +34,11 @@
 			                <p class="card-text">{{ $event->description }}</p>
 			                <h3><b>Organização:</b></h3>
 			                <p class="card-text">{{ $event->organiser }}</p>
-			                <a href="{{ route('event/show', ['event' => $event->id ]) }}" class="btn btn-info">Detalhes</a>
 			            </div>
 			        </div>
 			    </div>
 			</div>
-        @endforeach
+
     </div>
 
 @endsection
