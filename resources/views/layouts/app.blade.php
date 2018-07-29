@@ -16,13 +16,18 @@
 </head>
 <body>
     <div id="app">
-
-        @include('includes.navbar')
+        @section('navbar')
+            @include('includes.navbar')
+        @show
 
         @yield('content')
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
+    @section('script')
+        @include('includes.script')
+    @show
+
 </body>
 </html>
