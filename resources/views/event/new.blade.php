@@ -8,7 +8,7 @@
 
     <div style="margin-top: 30px; padding-bottom: 140px !important;" class="body-cadastro">
         <div id="main" class="container">
-            <form action="{{ route('event.store') }}" method="POST" data-toggle="validator">
+            <form action="{{ route('event.store') }}" method="POST" data-toggle="validator" enctype="multipart/form-data">
 
                 <div class="row">
                   <div class="col-md-12">
@@ -106,7 +106,7 @@
                             <div class="input-group-prepend">
                                 <button data-input="thumbnail2" data-preview="holder" class="btn btn-outline-secondary lfm" type="button"><i class="fa fa-image"></i></button>
                             </div>
-                            <input id="thumbnail2" name="image" type="text" class="form-control" aria-label="" aria-describedby="basic-addon1" readonly>
+                            <input id="thumbnail2" name="image" type="file" class="form-control" aria-label="" aria-describedby="basic-addon1" readonly>
                         </div>
                      </div>
                 </div>
