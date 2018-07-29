@@ -3409,6 +3409,19 @@ textarea.form-control {
 input[type="search"] {
   -webkit-appearance: none;
 }
+/** ALTERAÇÕES VENANCIO NAVBAR */ 
+.searchnav{
+  background-color: transparent;
+  border: 0px solid transparent;
+  border-bottom: 1px solid #000;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0px 30px 0px 5px;
+}
+.bg-navbar {
+  background-color: #3D3B38 !important;
+}
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type="date"].form-control,
@@ -5266,9 +5279,7 @@ tbody.collapse.in {
 
 .navbar {
   position: relative;
-  min-height: 50px;
-  margin-bottom: 22px;
-  border: 1px solid transparent;
+  min-height: 40px;
 }
 
 .navbar:before,
@@ -5281,11 +5292,6 @@ tbody.collapse.in {
   clear: both;
 }
 
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 4px;
-  }
-}
 
 .navbar-header:before,
 .navbar-header:after {
