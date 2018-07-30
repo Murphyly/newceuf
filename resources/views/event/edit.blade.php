@@ -9,6 +9,9 @@
   <div class="body-cadastro">
     <div id="main" class="container">
       <form action="{{ route('eventupdate', ['event' => $event->id ]) }}" method="POST" data-toggle="validator" enctype="multipart/form-data" meta name="csrf-token" content="{{ csrf_token() }}">
+
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
         <div class="row">
           <div class="col-md-12">
             <h4 class="page-header">Editar evento</h4>
@@ -18,19 +21,19 @@
         <div class="row">
              <div class="form-group col-md-12">
                <label for="campo1">Titulo</label>
-               <input name="title" value="{{ old('title') }}" type="text" class="form-control" placeholder="Digite o nome do evento">
+               <input name="title" value="{{ $event->title }}" type="text" class="form-control" placeholder="Digite o nome do evento">
              </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="campo1">Slogam</label>
-                <input name="slogam" value="{{ old('slogam') }}" type="text" class="form-control" placeholder="Texto para público alvo">
+                <input name="slogam" value="{{ $event->slogam }}" type="text" class="form-control" placeholder="Texto para público alvo">
             </div>
 
             <div class="form-group col-md-6">
                   <label for="campo1">Tema Geral</label><br>
-                  <select name="general_theme" value="{{ old('general_theme') }}"  type="text" class="custom-select">
+                  <select name="general_theme" value="{{ $event->general_theme ?? '' }}" class="custom-select">
                     <option value="Artes">Artes</option>
                     <option value="Arqueologia">Arqueologia</option>
                     <option value="Agronomia">Agronomia</option>
@@ -87,7 +90,7 @@
 
             <div class="form-group col-md-12">
                <label for="campo2">Descrição</label>
-               <input name="description" type="text" class="form-control" placeholder="Digite uma descrição do evento">
+               <input name="description" type="text" class="form-control" placeholder="Digite uma descrição do evento" value="{{ $event->description }}">
             </div>
 
             </div>
@@ -96,12 +99,12 @@
 
               <div class="form-group col-md-6">
                  <label for="campo2">Período</label>
-                 <input name="period" type="text" class="form-control" placeholder="Quando será seu evento?">
+                 <input name="period" type="text" class="form-control" placeholder="Quando será seu evento?" value="{{ $event->period }}">
               </div>
 
                <div class="form-group col-md-6">
                  <label for="campo2">Local</label>
-                 <input name="place" type="text" class="form-control" placeholder="Onde será o evento?">
+                 <input name="place" type="text" class="form-control" placeholder="Onde será o evento?" value="{{ $event->place }}">
               </div>
 
             </div>
@@ -110,7 +113,7 @@
 
               <div class="form-group col-md-6">
                  <label for="campo2">Organizador</label>
-                 <input name="organiser" type="text" class="form-control" placeholder="Digite o nome do Organizador">
+                 <input name="organiser" type="text" class="form-control" placeholder="Digite o nome do Organizador" value="{{ $event->organiser }}">
               </div>
 
             <div class="form-group col-md-6">
@@ -121,7 +124,7 @@
                     <i class="fa fa-picture-o"></i> Escolher
                   </a>
                 </span>
-                <input id="thumbnail" class="form-control" type="text" name="image">
+                <input id="thumbnail" class="form-control" type="text" name="image" value="{{ $event->image}}">
               </div>
               <img id="holder" style="margin-top:15px;max-height:100px;">
             </div>
