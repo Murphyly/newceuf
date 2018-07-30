@@ -6,7 +6,7 @@
 
 @section('content')
 
-  <div style="margin-top: 30px; padding-bottom: 140px !important;" class="body-cadastro">
+  <div class="body-cadastro">
     <div id="main" class="container">
       <form action="{{ route('event.store') }}" method="POST" data-toggle="validator" enctype="multipart/form-data" meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -78,30 +78,40 @@
   			            <option value="Sociologia">Sociologia</option>
   			            <option value="Zooologia">Zooologia</option>
   			          </select>
-  					</div>
+  					    </div>
+            </div>
+
+            <div class="row">
 
             <div class="form-group col-md-12">
                <label for="campo2">Descrição</label>
                <input name="description" type="text" class="form-control" placeholder="Digite uma descrição do evento">
             </div>
 
+            </div>
+
+            <div class="row">
+
+              <div class="form-group col-md-6">
+                 <label for="campo2">Período</label>
+                 <input name="period" type="text" class="form-control" placeholder="Quando será seu evento?">
+              </div>
+
+               <div class="form-group col-md-6">
+                 <label for="campo2">Local</label>
+                 <input name="place" type="text" class="form-control" placeholder="Onde será o evento?">
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="form-group col-md-6">
+                 <label for="campo2">Organizador</label>
+                 <input name="organiser" type="text" class="form-control" placeholder="Digite o nome do Organizador">
+              </div>
+
             <div class="form-group col-md-6">
-               <label for="campo2">Período</label>
-               <input name="period" type="text" class="form-control" placeholder="Quando será seu evento?">
-            </div>
-
-             <div class="form-group col-md-6">
-               <label for="campo2">Local</label>
-               <input name="place" type="text" class="form-control" placeholder="Onde será o evento?">
-            </div>
-
-            <div class="form-group col-md-6">
-               <label for="campo2">Organizador</label>
-               <input name="organiser" type="text" class="form-control" placeholder="Digite o nome do Organizador">
-            </div>
-
-
-            <div class="form-group col-md-12">
               <label for="">Banner do evento</label>
               <div class="input-group">
                 <span class="input-group-btn">
@@ -113,15 +123,15 @@
               </div>
               <img id="holder" style="margin-top:15px;max-height:100px;">
             </div>
+            </div>
 
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-info">Cadastrar</button><br>
-                </div>
+              <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-info">Cadastrar</button><br>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
 @endsection
 

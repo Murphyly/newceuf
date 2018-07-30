@@ -12,8 +12,6 @@
 <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" media ="screen" title="no title">
 <link rel="stylesheet" href="{{ asset('css/app.css') }}" media ="screen" title="no title">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
 <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
 <link rel="stylesheet" href="/vendor/laravel-filemanager/css/cropper.min.css">

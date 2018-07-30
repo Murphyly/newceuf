@@ -15,8 +15,8 @@
             @include('includes.navbar')
         @show
 
-        @section('content')
-        @show
+        @yield('content')
+
 
     </div>
 
