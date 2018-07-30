@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html>
 <head>
 
     @section('head')
         @include('includes.head')
     @show
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>CEUF | @yield('title')</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
@@ -20,7 +15,9 @@
             @include('includes.navbar')
         @show
 
-        @yield('content')
+        @section('content')
+        @show
+
     </div>
 
     <!-- Scripts -->
