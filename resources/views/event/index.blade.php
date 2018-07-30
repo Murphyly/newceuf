@@ -31,6 +31,7 @@
 			                <h3><b>Organização:</b></h3>
 			                <p class="card-text">{{ $event->organiser }}</p>
 			                <a href="{{ route('event/show', ['event' => $event->id ]) }}" class="btn btn-info">Detalhes</a>
+			                <a href="{{ route('eventedit', ['event' => $event->id ]) }}" class="btn btn-default"><i class="fa fa-pencil"></i> Editar</a>
 			            </div>
 			        </div>
 			    </div>

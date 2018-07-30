@@ -32,6 +32,10 @@ Route::get('event/index', 'Api\EventController@index');
 
 Route::get('event/show/{event}', 'Api\EventController@show')->name('event/show');
 
+Route::get('event/edit/{event}', 'Api\EventController@edit')->name('eventedit');
+
+Route::post('event/update/{event}', 'Api\EventController@update')->name('eventupdate');
+
 Route::post('event/search', 'Api\EventController@search')->name('search');
 
 Route::post('event/destroy', 'Api\EventController@destroy')->name('eventdestroy');
