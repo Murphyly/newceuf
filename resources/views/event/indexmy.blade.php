@@ -13,7 +13,7 @@
 	<section class="py-5 px-5 container mt-5" style="margin-top: 0 !important; padding-bottom: 0px !important;">
 			@if (isset($events))
 			@foreach( $events as $key=>$event )
-					@if( ( $key ) % 2 == 0 )
+					@if( ( $key ) % 3 == 0 )
 						<div class="row my-5">
 					@endif
 
@@ -36,18 +36,19 @@
 			                <h3 class="event-title"><b>Organização:</b></h3>
 			                <p class="card-text">{{ $event->organiser }}</p>
 			                <a href="{{ route('event/show', ['event' => $event->id ]) }}" class="btn btn-suc"><i class="fa fa-search-plus"></i>Detalhes</a>
-			                <a href="{{ route('eventedit', ['event' => $event->id ]) }}" class="btn btn-suc"><i class="fa fa-pencil"></i> Editar</a>
+			                @if( auth()->user()->id == $event->user_id)
+			                	<a href="{{ route('eventedit', ['event' => $event->id ]) }}" class="btn btn-suc"><i class="fa fa-pencil"></i> Editar</a>
+			                @endif
 					        </div>
 					    </div>
 					</div>
 	  
 
-					@if( ( $key - 1 ) % 2 == 0 )
+					@if( ( $key - 2 ) % 3 == 0 )
 						</div>
 					@endif
 
 			@endforeach
-			{{$events->links()}}
 		</section>
 	@endif
 </section>

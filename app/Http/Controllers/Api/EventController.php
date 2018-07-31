@@ -118,14 +118,9 @@ class EventController extends Controller
 
     public function indexmy()
     {
-        $event = Event::paginate(9);
+        $event = Event::all();
 
-        return view('event.index', ['events' => $event]);
+        return view('event.indexmy', ['events' => $event]);
 
-        /*
-        $events = Events::all();
-
-        return response()->json($events);
-        */
     }
 }

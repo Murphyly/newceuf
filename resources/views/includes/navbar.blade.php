@@ -43,6 +43,7 @@
 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ route('eventcreate') }}">Criar evento</a></li>
+                                    <li><a href="{{ route('myevents') }}">Meus eventos</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

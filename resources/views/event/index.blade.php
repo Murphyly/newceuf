@@ -36,7 +36,9 @@
 			                <h3 class="event-title"><b>Organização:</b></h3>
 			                <p class="card-text">{{ $event->organiser }}</p>
 			                <a href="{{ route('event/show', ['event' => $event->id ]) }}" class="btn btn-suc"><i class="fa fa-search-plus"></i>Detalhes</a>
-			                <a href="{{ route('eventedit', ['event' => $event->id ]) }}" class="btn btn-suc"><i class="fa fa-pencil"></i> Editar</a>
+			                @if( auth()->user()->id == $event->user_id)
+			                	<a href="{{ route('eventedit', ['event' => $event->id ]) }}" class="btn btn-suc"><i class="fa fa-pencil"></i> Editar</a>
+			                @endif
 					        </div>
 					    </div>
 					</div>
@@ -47,8 +49,10 @@
 					@endif
 
 			@endforeach
-			{{$events->links()}}
 		</section>
+		<div class="container">
+			{{$events->links()}}
+		</div>
 	@endif
 </section>
 @endsection

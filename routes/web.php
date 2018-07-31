@@ -32,6 +32,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('event/index', 'Api\EventController@index');
 
+Route::get('event/myevents', 'Api\EventController@indexmy')->name('myevents');
+
 Route::get('event/show/{event}', 'Api\EventController@show')->name('event/show');
 
 Route::get('event/edit/{event}', 'Api\EventController@edit')->name('eventedit');
