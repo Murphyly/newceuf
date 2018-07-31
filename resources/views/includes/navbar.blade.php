@@ -1,4 +1,4 @@
-<nav class="navbar ixed-top opaque-navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);">
+<nav class="navbar ixed-top opaque-navbar navbar-expand-lg navbar-light bg-navbar">
             <div class="container">
                 <div class="navbar-header">
 
@@ -12,15 +12,15 @@
 
                     <!-- Branding Image -->
                     <a href="{{ url('/') }}">
-                        <img class="navbar-brand" src="{{ asset('images/logob.png') }}">
+                        <img class="navbar-brand" src="{{ asset('images/logow.png') }}">
                     </a>
 
                 </div>
 
-                <form class="form-inline mr-auto" action="{{ route('search') }}" method="POST">
+                <form class="form-inline mr-auto w-50" action="{{ route('search') }}" method="POST">
                     {{ csrf_field() }}
-                    <input class="form-control opaque-navbar" value="{{ old('content') }}" name="content" type="search" placeholder="Pesquisar" aria-label="Search" >
-                    <button class="btn btn-outline-info" type="submit">Ir</button>
+                    <input class="form-control opaque-navbar w-75 searchnav" value="{{ old('content') }}" name="content" type="search" placeholder="Pesquisar" aria-label="Search" >
+                    <button class="btn btn-outline-info" type="submit"></button>
                 </form>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
