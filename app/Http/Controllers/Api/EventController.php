@@ -112,7 +112,20 @@ class EventController extends Controller
     {
         $search = $request->content;
 
-        $events = Event::where('title','LIKE',"%{$search}%")->orWhere('general_theme','LIKE',"%{$search}%")->orWhere('period','LIKE',"%{$search}%")->orWhere('place','LIKE',"%{$search}%")->get();
+        $events = Event::where('title','LIKE',"%{$search}%")->orWhere('general_theme','LIKE',"%{$search}%")->orWhere('period','LIKE',"%{$search}%")->orWhere('place','LIKE',"%{$search}%")->orWhere('department','LIKE',"%{$search}%")->get();
         return view('event.search')->with('events', $events)->with('search', $search);
+    }
+
+    public function indexmy()
+    {
+        $event = Event::paginate(9);
+
+        return view('event.index', ['events' => $event]);
+
+        /*
+        $events = Events::all();
+
+        return response()->json($events);
+        */
     }
 }

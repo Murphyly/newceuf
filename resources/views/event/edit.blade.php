@@ -11,6 +11,7 @@
       <form action="{{ route('eventupdate', ['event' => $event->id ]) }}" method="POST" data-toggle="validator" enctype="multipart/form-data" meta name="csrf-token" content="{{ csrf_token() }}">
 
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
+       <input type="hidden" name="user_id" value="{{ $event->user_id }}">
 
         <div class="row">
           <div class="col-md-12">
@@ -107,14 +108,26 @@
                  <input name="place" type="text" class="form-control" placeholder="Onde será o evento?" value="{{ $event->place }}">
               </div>
 
-            </div>
-
-            <div class="row">
+              <div class="form-group col-md-6">
+                 <label for="campo2">Instituto / Departamento</label>
+                 <input name="department" type="text" class="form-control" placeholder="Qual Instituto / Departamento?" value="{{  $event->department }}">
+              </div>
 
               <div class="form-group col-md-6">
                  <label for="campo2">Organizador</label>
                  <input name="organiser" type="text" class="form-control" placeholder="Digite o nome do Organizador" value="{{ $event->organiser }}">
               </div>
+
+            </div>
+
+            <div class="row">
+
+
+              <div class="form-group col-md-6">
+                 <label for="campo2">Valor</label>
+                 <input name="price" value="{{ $event->price }}" type="text" class="form-control" placeholder="Digite o nome do Organizador">
+              </div>
+
 
             <div class="form-group col-md-6">
               <label for="">Banner do evento</label>

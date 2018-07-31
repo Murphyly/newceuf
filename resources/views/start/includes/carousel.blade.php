@@ -9,7 +9,7 @@
 
         <div class="carousel-inner">
             <div class="item active">
-                <a href= "{{route('event/show',1)}}">
+                <a href= "{{route('event/show',11)}}">
                     <img src="{{ asset('images/1.png')}}" class="w-100">
                 </a>
             </div>

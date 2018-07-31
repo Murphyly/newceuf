@@ -11,6 +11,7 @@
       <form action="{{ route('event.store') }}" method="POST" data-toggle="validator" enctype="multipart/form-data" meta name="csrf-token" content="{{ csrf_token() }}">
 
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
         <div class="row">
           <div class="col-md-12">
@@ -99,7 +100,7 @@
 
               <div class="form-group col-md-6">
                  <label for="campo2">Período</label>
-                 <input name="period" type="text" class="form-control" placeholder="Quando será seu evento?">
+                 <input name="period" type="date" class="form-control" placeholder="Quando será seu evento?">
               </div>
 
                <div class="form-group col-md-6">
@@ -107,14 +108,25 @@
                  <input name="place" type="text" class="form-control" placeholder="Onde será o evento?">
               </div>
 
-            </div>
-
-            <div class="row">
+              <div class="form-group col-md-6">
+                 <label for="campo2">Instituto / Departamento</label>
+                 <input name="department" type="text" class="form-control" placeholder="Qual Instituto / Departamento?">
+              </div>
 
               <div class="form-group col-md-6">
                  <label for="campo2">Organizador</label>
                  <input name="organiser" type="text" class="form-control" placeholder="Digite o nome do Organizador">
               </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="form-group col-md-6">
+                 <label for="campo2">Valor</label>
+                 <input name="price" type="text" class="form-control" placeholder="Digite o nome do Organizador">
+              </div>
+
 
             <div class="form-group col-md-6">
               <label for="">Banner do evento</label>
