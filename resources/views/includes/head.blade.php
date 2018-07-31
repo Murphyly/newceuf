@@ -16,3 +16,13 @@
 <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
 <link rel="stylesheet" href="/vendor/laravel-filemanager/css/cropper.min.css">
 <link rel="stylesheet" href="/vendor/laravel-filemanager/css/lfm.css">
+
+<!-- Favicon -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icons/apple-touch-icon.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('icons/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('icons/favicon-16x16.png') }}">
+<link rel="manifest" href="{{ asset('icons/site.webmanifest') }}">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
