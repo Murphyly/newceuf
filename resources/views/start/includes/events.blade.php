@@ -6,12 +6,12 @@
 						<div class="row my-5">
 					@endif
 
-					<div class="col-sm">
+					<div class="col-sm py-2">
 					    <div class="card" style="margin-bottom: 15px;">
 					        <img class="card-img-top w-100" src="{{ $event->image }}" alt="Card image cap">
 					        <div class="card-body">
-					            <h4 class="card-title"><b>{{ $event->title }}</b></h4>
-					            <p class="card-text">{{ $event->description }}</p>
+					            <h4 class="card-title card-index"><b>{{ $event->title }}</b></h4>
+					            <p class="card-text card-index">{{ $event->description }}</p>
 					        </div>
 					    </div>
 					</div>

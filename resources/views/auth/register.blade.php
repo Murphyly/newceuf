@@ -7,13 +7,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-body">
+        <div class="col-md-8 col-md-offset-2 py-2">
+            <div class="panel panel-default py-2">
+                <div class="panel-body py-2">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} py-2">
                             <label for="name" class="col-md-4 control-label">Nome</label>
 
                             <div class="col-md-6">
@@ -65,7 +65,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-success btn-lg">
+                                <button type="submit" class="btn btn-suc btn-lg">
                                     Cadastrar
                                 </button>
                             </div>

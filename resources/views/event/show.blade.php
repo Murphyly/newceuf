@@ -11,8 +11,8 @@
         @include('includes.notification')
     @endif
 
-    <div class="container py-5 ">
-		<div class="card mb-5 ">
+    <div class="container py-4">
+		<div class="card mb-5 py-3 ">
 			<div class="row p-5 topo text-white">
 				<div class="col-md-8" style= " max-height:320px; overflow :hidden; padding-right:0; padding-left:0; ">
 					<img class="w-100 card-img-top rounded-0" src="{{ $event->image }}" alt="{{ $event->title}}" >

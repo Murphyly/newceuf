@@ -7,13 +7,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+        <div class="col-md-8 col-md-offset-2 py-2">
+            <div class="panel panel-default py-2">
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form class="form-horizontal py-2" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} py-4  ">
                             <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
@@ -53,11 +53,11 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-success btn-lg">
+                                <button type="submit" class="btn btn-suc btn-lg">
                                     Login
                                 </button>
 
-                                <a class="btn btn-danger btn-lg" href="{{ route('password.request') }}">
+                                <a class="btn btn-ligth btn-lg" href="{{ route('password.request') }}">
                                     Esqueci a senha?
                                 </a>
                             </div>

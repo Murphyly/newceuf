@@ -132,7 +132,7 @@
 
             <div class="row">
               <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-info">Cadastrar</button><br>
+                <button type="submit" class="btn btn-suc btn-lg">Cadastrar</button><br>
               </div>
             </div>
           </form>
