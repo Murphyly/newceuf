@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('start.start');
 });
 
+Route::get('about', function () {
+    return view('start.includes.about');
+});
+
 Route::get('testes', function () {
     return view('testes');
 });
