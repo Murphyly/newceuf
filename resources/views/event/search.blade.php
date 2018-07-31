@@ -11,7 +11,7 @@
     @endif
 
     <div style="padding-bottom: 140px !important;" class="container py-5">
-        <h4>Exibindo {{ $events->count() }} resultados para <em>{{ $search }}</em></h4>
+        <h4>Exibindo <b>{{ $events->count() }}</b> resultados para <em>{{ $search }}</em></h4>
         @if(empty($events->first()))
 			<div class="card mb-5">
 			    <div class="row">
@@ -28,9 +28,33 @@
 			    </div>
 			</div>
         @else
-	        @foreach($events as $event )
-	            @include('event.show')
-	        @endforeach
+	        <section class="cursos">
+		<section class="py-5 px-5 container mt-5" style="margin-top: 0 !important; padding-bottom: 0px !important;">
+				@if (isset($events))
+				@foreach( $events as $key=>$event )
+						@if( ( $key ) % 2 == 0 )
+							<div class="row my-5">
+						@endif
+
+						<div class="col-sm">
+						    <div class="card" style="margin-bottom: 15px;">
+						        <img class="card-img-top w-100" src="{{ $event->image }}" alt="Card image cap">
+						        <div class="card-body">
+						            <h4 class="card-title"><b>{{ $event->title }}</b></h4>
+						            <p class="card-text">{{ $event->description }}</p>
+						        </div>
+						    </div>
+						</div>
+		  
+
+						@if( ( $key - 1 ) % 2 == 0 )
+							</div>
+						@endif
+
+				@endforeach
+		</section>
+		@endif
+	</section>
         @endif
     </div>
 

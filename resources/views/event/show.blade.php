@@ -16,7 +16,7 @@
             <div class="card mb-5">
 			    <div class="row py-5">
 			        <div class="col-md-4">
-			            <img class="card-img-top p-3" src="{{ $event->image }}" alt="Card image cap">
+			            <img class="card-img-top p-3" src="{{ $event->image }}" alt="Card image cap" >
 			        </div>
 			        <div class="col-md-8">
 			            <div class="card-body">
