@@ -11,6 +11,7 @@
     @endif
 
     @include('start.includes.welcome')
+     @include('start.includes.carousel')
     @include('start.includes.events')
     
 @endsection

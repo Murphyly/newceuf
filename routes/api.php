@@ -30,10 +30,5 @@ Route::get('events', 'Api\EventController@index');
  
 Route::get('event/{event}', 'Api\EventController@show');
 
-Route::post('event','Api\EventController@store')->name('event.store');
-
- 
-Route::put('events/{event}','Api\EventController@update')->name('event.update');
- 
 Route::delete('event/{event}', 'Api\EventController@destroy');
 

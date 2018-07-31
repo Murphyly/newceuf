@@ -68,9 +68,9 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Event $event)
     {
-        //
+        return view('event.edit')->with('event', $event);
     }
 
     /**
@@ -80,13 +80,18 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Events $event)
+    public function update(Request $request, $id)
     {
-        $event->update($request->all());
- 
-        return response()->json($event, 200);
-    }
+        $event = Event::findOrFail($id);
+        $data = $request->all();
+        if ($event->update($data)) {
 
+            return view('event.show')->with('event', $event);
+        }
+
+        throw new Exception("Erro ao atualizar evento", 1);
+    }
+ 
     /**
      * Remove the specified resource from storage.
      *
