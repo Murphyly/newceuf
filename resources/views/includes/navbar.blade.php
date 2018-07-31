@@ -19,7 +19,7 @@
 
                 <form class="form-inline mr-auto w-50" action="{{ route('search') }}" method="POST">
                     {{ csrf_field() }}
-                    <input class="form-control opaque-navbar w-75 searchnav" value="{{ old('content') }}" name="content" type="search" placeholder="Pesquisar" aria-label="Search" >
+                    <input class="nav-search opaque-navbar w-75 searchnav" value="{{ old('content') }}" name="content" type="search" placeholder="Pesquisar" aria-label="Search" >
                     <button class="btn btn-outline-info" type="submit"></button>
                 </form>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
