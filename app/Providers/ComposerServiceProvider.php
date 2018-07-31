@@ -17,7 +17,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('start.includes.events', function ($view) {
-            $view->with('events', Event::oldest()->limit(9)->get());
+            $view->with('events', Event::oldest()->paginate(9));
         });
 
     }

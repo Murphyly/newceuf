@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 
 class EventController extends Controller
 {
@@ -15,7 +18,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $event = Event::all();
+        $event = Event::paginate(9);
 
         return view('event.index', ['events' => $event]);
 

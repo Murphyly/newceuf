@@ -47,7 +47,8 @@
 					@endif
 
 			@endforeach
-	</section>
+			{{$events->links()}}
+		</section>
 	@endif
 </section>
 @endsection
