@@ -19,7 +19,7 @@
 
 					<div class="col-sm">
 					    <div class="card" style="margin-bottom: 15px;">
-					        <img class="card-img-top w-100" src="{{ $event->image }}" alt="Card image cap">
+					        <img class="card-img-top w-100" src="{{ $event->image }}" alt="Imagem do evento">
 					        <div class="card-body">
 					        <h3><b>Evento:</b></h3>
 			                <h4 class="card-title">{{ $event->title}}</h4>

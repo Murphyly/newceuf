@@ -4544,6 +4544,7 @@ tbody.collapse.in {
   display: table-row-group;
 }
 
+
 .collapsing {
   position: relative;
   height: 0;
@@ -6852,9 +6853,10 @@ button.list-group-item-danger.active:focus {
 
 .panel {
   margin-bottom: 22px;
+  margin-top: 55px;
   background-color: #fff;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 14px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
