@@ -10,6 +10,8 @@
     <div id="main" class="container">
       <form action="{{ route('event.store') }}" method="POST" data-toggle="validator" enctype="multipart/form-data" meta name="csrf-token" content="{{ csrf_token() }}">
 
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
         <div class="row">
           <div class="col-md-12">
             <h4 class="page-header">Cadastrar evento</h4>

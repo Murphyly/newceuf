@@ -34,6 +34,8 @@ Route::get('event/show/{event}', 'Api\EventController@show')->name('event/show')
 
 Route::get('event/edit/{event}', 'Api\EventController@edit')->name('eventedit');
 
+Route::post('event/store','Api\EventController@store')->name('event.store');
+
 Route::post('event/update/{event}', 'Api\EventController@update')->name('eventupdate');
 
 Route::post('event/search', 'Api\EventController@search')->name('search');
