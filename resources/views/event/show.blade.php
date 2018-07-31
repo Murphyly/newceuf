@@ -11,34 +11,36 @@
         @include('includes.notification')
     @endif
 
-
-    <div class="container py-5">
-            <div class="card mb-5">
-			    <div class="row py-5">
-			        <div class="col-md-4">
-			            <img class="card-img-top p-3" src="{{ $event->image }}" alt="Card image cap" >
-			        </div>
-			        <div class="col-md-8">
-			            <div class="card-body">
-			            	<h3><b>Evento:</b></h3>
-			                <h4 class="card-title">{{ $event->title}}</h4>
-			                <h3><b>Área de conhecimento:</b></h3>
-			                <p class="card-text">{{ $event->general_theme }}</p>
-			                <h3><b>Slogam:</b></h3>
-			                <p class="card-text">{{ $event->slogam }}</p>
-			                <h3><b>Data do evento:</b></h3>
-			                <p class="card-text">{{ $event->period }}</p>
-			                <h3><b>Local:</b></h3>
-			                <p class="card-text">{{ $event->place }}</p>
-			                <h3><b>Descrição:</b></h3>
-			                <p class="card-text">{{ $event->description }}</p>
-			                <h3><b>Organização:</b></h3>
-			                <p class="card-text">{{ $event->organiser }}</p>
-			            </div>
-			        </div>
-			    </div>
+    <div class="container py-5 ">
+		<div class="card mb-5 ">
+			<div class="row p-5 topo text-white">
+				<div class="col-md-8" style= " max-height:320px; overflow :hidden; padding-right:0; padding-left:0; ">
+					<img class="w-100 card-img-top rounded-0" src="{{ $event->image }}" alt="{{ $event->title}}" >
+				</div>
+				<div class="col-md-4 " style= " max-height:320px; overflow :hidden; background:#917744">
+						<p class="card-text data py-2">{{ $event->period }},</p>
+						<h3 class="card-title title text-uppercase text-center py-5" >{{ $event->title}}</h3>
+						<p class="card-text data">por {{ $event->organiser }},</p>
+				</div>
 			</div>
-
+			<div class="row px-5">
+				<div class="col-md-8">
+						<h3><b>Mais informações:</b></h3>
+						<p class="card-text">{{ $event->description }}</p>
+						<p class="card-text">{{ $event->slogam }}</p>
+						<h3><b>Área de conhecimento:</b></h3>
+						<p class="card-text">{{ $event->general_theme }}</p>
+				</div>
+				<div class="col-md-4">
+					<h3><i class="fa fa-calendar" aria-hidden="true"></i> <b>Data e hora:</b></h3>
+					{{ $event->period }}
+					<h3><i class="fa fa-map-marker" aria-hidden="true"></i> <b>Local:</b></h3>
+					<p class="card-text">{{ $event->place }}</p>
+				</div>
+			</div>
+				</div>
+			</div>
+		</div>
     </div>
 
 @endsection

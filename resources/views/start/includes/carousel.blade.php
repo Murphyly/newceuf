@@ -1,6 +1,6 @@
 <section class=" carousel container mt-5">
 
-    <div id="Carousel" class="carousel slide">
+    <div id="Carousel" class="carousel slide ">
         <ol class="carousel-indicators">
             <li data-target="Carousel" data-slide-to="0" class="active"></li>
             <li data-target="Carousel" data-slide-to="1"></li>
@@ -9,13 +9,19 @@
 
         <div class="carousel-inner">
             <div class="item active">
-                <img src="https://i1.wp.com/gamelogia.com.br/wp-content/uploads/2016/11/gamer.jpg?resize=1280%2C640&ssl=1">
+                <a href= "{{route('event/show',1)}}">
+                    <img src="{{ asset('images/1.png')}}" class="w-100">
+                </a>
             </div>
             <div class="item">
-                <img src="https://wallpaper4rest.com/animals/wallpaper/poptart-cat-wallpaper_1.jpeg">
+                    <a href= "{{route('event/show',2)}}">
+                         <img src="{{ asset('images/2.png')}}" class="w-100">
+                    </a>
             </div>
             <div class="item">
-                <img src="img/Carousel/003.jpg">
+                    <a href= "{{route('event/show',3)}}">
+                        <img src="{{ asset('images/3.jpg')}}" class="w-100">
+                    </a>
             </div>
         </div>
 
