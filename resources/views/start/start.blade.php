@@ -13,6 +13,9 @@
     @include('start.includes.welcome')
      @include('start.includes.carousel')
     @include('start.includes.events')
+    <div class="container">
+    	{{$events->links()}}
+    </div>
     
 @endsection
 

@@ -15,10 +15,6 @@ Route::get('event/create', function () {
     return view('event.new');
 })->name('eventcreate');
 
-Route::get('/', function () {
-    return view('start.start');
-});
-
 Route::get('about', function () {
     return view('start.includes.about');
 });
@@ -29,6 +25,8 @@ Route::get('testes', function () {
 
 
 Auth::routes();
+
+Route::get('/', 'StartPageController@index')->name('start');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

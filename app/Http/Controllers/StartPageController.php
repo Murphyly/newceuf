@@ -4,18 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 
-class HomeController extends Controller
+
+class StartPageController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -26,6 +21,6 @@ class HomeController extends Controller
     {
         $event = Event::paginate(9);
         
-        return view('home', ['events' => $event]);
+        return view('start.start', ['events' => $event]);
     }
 }
