@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" media ="screen" title="no title">
 <link rel="stylesheet" href="{{ asset('css/app.css') }}" media ="screen" title="no title">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
 <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
 <link rel="stylesheet" href="/vendor/laravel-filemanager/css/cropper.min.css">
 <link rel="stylesheet" href="/vendor/laravel-filemanager/css/lfm.css">
